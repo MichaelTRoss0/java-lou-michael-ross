@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+            <title>Inventory Manager</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <h1><a href="/" class="text-dark">Inventory Manager</a></h1>
+            </div>
+            <div class="row">
+                <h3 class="col-12">Supplier Details</h3>
+                <div class="col-2">Name</div>
+                <div class="col-10" th:text="${supplier.name}">name</div>
+                <div class="col-2">Address</div>
+                <div class="col-10" th:text="${supplier.address}">address</div>
+                <div class="col-2">Contact</div>
+                <div class="col-10" th:text="${supplier.contact}">contact</div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <h3>Products</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Store</th>
+                                <th>Quantity</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="product : ${supplier.products}">
+                                <td th:text="${product.id}">id</td>
+                                <td><a href='#' th:href='@{product(id=${product.id})}' th:text="${product.name}">name</a></td>
+                                <td th:text="${product.description}">desc</td>
+                                <td th:text="${product.store.name + ' - ' + product.store.location}">store</td>
+                                <td th:text="${product.quantity}">quantity</td>
+                                <td><a href="#" th:href="@{removeSupplier(productId=${product.id}, supplierId=${supplier.id})}">Remove</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    </body>
+</html>

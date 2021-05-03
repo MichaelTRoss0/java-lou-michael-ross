@@ -1,0 +1,5 @@
+A1::Snickers::2.00::20
+B2::Anime Mouse Pad::5.00::10
+C3::Pencil::0.50::50
+D4::iPhone::10.00::5
+E5::Cat::15.00::1

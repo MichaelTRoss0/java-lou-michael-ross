@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.mtross.supersightings.SuperSightingsApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 16.802 s - in com.mtross.supersightings.SuperSightingsApplicationTests

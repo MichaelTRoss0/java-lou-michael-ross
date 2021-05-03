@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd
+          http://www.springframework.org/schema/mvc
+          http://www.springframework.org/schema/mvc/spring-mvc.xsd
+          http://www.springframework.org/schema/tx
+          http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+          http://www.springframework.org/schema/context
+          http://www.springframework.org/schema/context/spring-context.xsd
+          http://www.springframework.org/schema/aop  
+          http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+
+    <!-- Bean definitions go here -->    
+    <bean id="controller" class="com.jdklueber.cashregister.controller.MainController">
+    	<constructor-arg ref="dao"/>
+    	<constructor-arg ref="view"/>
+    	<constructor-arg ref="logger"/>
+    	<constructor-arg ref="cashRegister"/>
+    </bean>
+    <bean id="view" class="com.jdklueber.cashregister.view.ConsoleView">
+    	<constructor-arg ref="io"/>
+    </bean>
+    
+    <bean id="io" class="com.jdklueber.cashregister.view.UserIOImpl"></bean>
+    <bean id="logger" class="com.jdklueber.cashregister.service.LoggingServiceConsoleImpl"></bean>
+    <bean id="dao" class="com.jdklueber.cashregister.dao.InventoryDAOMemImpl"></bean>
+    <bean id="cashRegister" class="com.jdklueber.cashregister.service.CashRegisterServiceImpl">
+    	<constructor-arg ref="dao"/>
+    	<constructor-arg ref="logger"/>
+    	<constructor-arg ref="salesTaxCalculator"/>
+    </bean>
+    <bean id="salesTaxCalculator" class="com.jdklueber.cashregister.service.SalesTaxCalculatorImpl">
+    	<constructor-arg type="java.lang.String" value="0.07"/>
+    </bean>
+</beans>

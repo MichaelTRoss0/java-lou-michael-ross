@@ -1,0 +1,4 @@
+com/mtross/guessthenumber/dao/GameDaoDBTest.class
+com/mtross/guessthenumber/dao/RoundDaoDBTest.class
+com/mtross/guessthenumber/service/GuessTheNumberServiceTest.class
+com/mtross/guessthenumber/TestApplicationConfiguration.class

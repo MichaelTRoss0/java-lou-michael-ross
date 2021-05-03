@@ -1,0 +1,4 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+5,Ross,WA,9.25,Wood,10000.00,5.15,4.75,51500.00,47500.00,9157.50,108157.50
+6,Michael,KY,6.00,Laminate,420.69,1.75,2.10,736.21,883.45,97.18,1716.84
+8,Jason,TX,4.45,Carpet,200.00,2.25,2.10,450.00,420.00,38.72,908.72

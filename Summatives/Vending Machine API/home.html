@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vending Machine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .menu-btn {
+            /*min-width: 12cm;
+            max-width: 12cm;*/
+            min-width: 32%;
+            max-width: 32%;
+            text-align: center;
+            padding: 5px;
+            border: 2px solid #0E1729;
+            margin: 3px;
+            float: left;
+            background-color: #eeeeee;
+        }
+
+        form {
+            text-align: center;
+        }
+
+        #balance-box,
+        #message-box,
+        #change-box {
+            border: 1px solid #0E1729;
+            min-height: 25px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <h1 id="mainHeading">Vending Machine</h1>
+    </div>
+
+    <hr>
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <menu class="col-sm-9 col-md-9 col-lg-9" id="vending-menu"></menu>
+
+            <div class="col-sm-3 col-md-3 col-lg-3" id="vending-forms">
+                <form class="form-group" id="add-money">
+                    <label for="add-money"><b>Current Balance:</b> </label>
+                    <div class="container" id="balance-box">
+                        $<output for="add-money" name="balance" id="balance">0.00</output>
+                    </div>
+                    <input class="btn-block" type="button" id="dollar-btn" value="Add Dollar" />
+                    <input class="btn-block" type="button" id="quarter-btn" value="Add Quarter" />
+                    <input class="btn-block" type="button" id="dime-btn" value="Add Dime" />
+                    <input class="btn-block" type="button" id="nickel-btn" value="Add Nickel" />
+                </form>
+
+                <hr>
+
+                <form class="form-group" id="purchase-item">
+                    <label for="add-money"><b>Messages:</b> </label>
+                    <div class="container" id="message-box"></div>
+                    <input type="text" class="form-control item-select" placeholder="Item Number" id="item-select" name="item-select" style="margin-bottom: 10px" value="">
+                    <input class="btn-block" type="button" id="purchase-btn" value="Make Purchase" />
+                </form>
+
+                <hr>
+
+                <form class="form-group" id="change-return">
+                    <label for="add-money"><b>Change:</b> </label>
+                    <div class="container" id="change-box"></div>
+                    <input class="btn-block" type="button" id="change-btn" value="Change Return" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap Dependencies -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- App Specific Code -->
+    <script src="js/home.js"></script>
+
+</body>
+
+</html>

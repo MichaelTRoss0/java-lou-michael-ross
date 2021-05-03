@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/mvc
+ http://www.springframework.org/schema/mvc/spring-mvc.xsd
+ http://www.springframework.org/schema/tx
+ http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd
+ http://www.springframework.org/schema/aop
+ http://www.springframework.org/schema/aop/spring-aop-3.2.xsd">
+    
+    
+    <!-- BEANS START HERE -->
+    
+    <!--STEP 1-->
+    <!--Create Some Engines - Maybe one of Each-->
+    
+        <!--A Broken Engine-->
+        <bean id="brokenEngine"
+              class="com.tsguild.exercises.racer.engines.BrokenEngine">
+        </bean>
+        
+        <!--An Efficient Engine-->
+        <bean id="efficientEngine"
+              class="com.tsguild.exercises.racer.engines.EfficientEngine">
+        </bean>
+        
+        <!--A High Power Engine-->
+        <bean id="highPowerEngine"
+              class="com.tsguild.exercises.racer.engines.HighPowerEngine">
+        </bean>
+        
+        <!--A Hybrid Engine-->
+        <bean id="hybridEngine"
+              class="com.tsguild.exercises.racer.engines.HybridEngine">
+        </bean>
+        
+        <!--A Low Power Engine-->
+        <bean id="lowPowerEngine"
+              class="com.tsguild.exercises.racer.engines.LowPowerEngine">
+        </bean>
+        
+        <!--A Turbo Engine-->
+        <bean id="turboEngine"
+              class="com.tsguild.exercises.racer.engines.TurboEngine">
+        </bean>
+    
+    <!--STEP 2-->
+    <!--Put together some cars! & Don't forget to give them some gas (25 gallons should work) -->
+    
+        <!-- How about a hamster ball -->
+        <bean id="hamsterBall"
+              class="com.tsguild.exercises.racer.vehicles.HamsterBall">
+        </bean>
+        
+        <!--And a JWBeetle w/ a hybrid engine.-->
+        <bean id="jwBeetle"
+              class="com.tsguild.exercises.racer.vehicles.JWBeetle">
+            <constructor-arg ref="hybridEngine"/>
+        </bean>
+        
+        <!--One Pixel Tank w/ a low powered engine.-->
+        <bean id="pixelTank"
+              class="com.tsguild.exercises.racer.vehicles.PixelTank">
+            <constructor-arg ref="lowPoweredEngine"/>
+        </bean>
+
+        <!--A Digital Porsche w/ an efficient engine.-->
+        <bean id="digitalPorsche"
+              class="com.tsguild.exercises.racer.vehicles.DigitalPorsche">
+            <constructor-arg ref="efficientEngine"/>
+        </bean>
+
+        <!--A Drag Racer w/ a high powered engine.-->
+        <bean id="dragRacer"
+              class="com.tsguild.exercises.racer.vehicles.DragRacer">
+            <constructor-arg ref="highPoweredEngine"/>
+        </bean>
+        
+        <!--And a plain ol' Vehicle called 'theJunker' with a Broken Engine-->
+        <bean id="theJunker"
+              class="com.tsguild.exercises.racer.vehicles.Vehicle">
+            <constructor-arg ref="brokenEngine"/>
+        </bean>
+        
+        
+    <!--STEP 3-->
+    <!-- Now, you've got the Racers, now put together the Race! -->
+    <!-- Make it 100 miles, and add in ALL the racers from above. -->
+    <!-- This should be enough to make it run...! -->
+        <bean id="race"
+              class="com.tsguild.exercises.racer.tracks.Race">
+            <constructor-arg value="100.00"/>
+            <constructor-arg ref="realAnnouncer"/>
+            <property name=""/>
+        </bean>
+        
+        
+    <!--STEP 4-->
+    <!-- But you might not want to forget some helpers. -->
+    <!-- An ANNOUNCER might lead some clarity as to what's going on ... -->
+        <bean id="realAnnouncer"
+              class="com.tsguild.exercises.racer.helpers.RealAnnouncer">
+        </bean>
+
+    <!--STRETCH GOAL-->
+    <!-- Plus there's another kind of helper that might help put broken things back together again... -->
+
+
+    <!-- NO MORE BEANS PAST THIS POINT -->
+        
+    
+</beans>
